@@ -4,7 +4,7 @@ package helloKW
 import org.springframework.context.annotation.{Configuration, ComponentScan}
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.stereotype.Controller
-import org.springframework.web.bind.annotation.{RequestMapping, ResponseBody}
+import org.springframework.web.bind.annotation.{RestController,RequestMapping, ResponseBody,RequestMethod}
 import org.springframework.web.bind.annotation.RequestParam
 
 /**
@@ -19,13 +19,13 @@ import org.springframework.streotype.Controller
 
 
  */
-@Controller
+@RestController
 @Configuration
 @EnableAutoConfiguration
 @ComponentScan
 class AxyzConfig {
 
-  @RequestMapping(Array{"/"})
+  @RequestMapping(method = Array {RequestMethod.GET},value=Array{"/"})
   @ResponseBody
   def Helloads(): String = "Hello test"
   
